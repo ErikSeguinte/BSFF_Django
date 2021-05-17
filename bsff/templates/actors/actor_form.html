@@ -4,7 +4,6 @@
 {% block title %}{{ view.action|default:"Add" }} Actor{% endblock title %}
 
 {%block content%}
-<h1>Add Actor</h1>
 {% with action=view.action|default:"Add" %}
 <h1>{{ action }} Actor</h1>
 <form method="post" action=".">

@@ -13,7 +13,7 @@ class ActorDetailView(DetailView):
 class ActorCreateView(LoginRequiredMixin,CreateView):
     model = Actor
     fields = [
-        'full_name', 'short_name', 'bio', 'characters',
+        'full_name', 'short_name', 'bio',
     ]
 
     def form_valid(self, form):
@@ -24,7 +24,7 @@ class ActorUpdateView(LoginRequiredMixin,UpdateView):
     model = Actor
     lookup_field = 'slug'
     fields = [
-        'full_name', 'short_name', 'bio', 'characters',
+        'full_name', 'short_name', 'bio',
     ]
     
     action = "update"
