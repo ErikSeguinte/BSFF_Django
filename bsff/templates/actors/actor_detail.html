@@ -9,4 +9,15 @@
     {% if actor.bio %}
         <p>{{ actor.bio|linebreaksbr }}</p>
     {% endif %}
+
+    <hr/>
+    
+    <h3>Submitted by
+    {% comment %} <a href="{% url 'users:detail' cheese.creator.username %}"> {% endcomment %}
+        {{ actor.creator.username }}
+    {% comment %} </a> {% endcomment %}
+    </h3>
+    {% if actor.creator.name %}
+        <p>{{ actor.creator.name }}</p>
+    {% endif %}
 {% endblock content %}

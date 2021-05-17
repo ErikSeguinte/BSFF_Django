@@ -16,3 +16,7 @@ class ActorCreateView(LoginRequiredMixin,CreateView):
     fields = [
         'full_name', 'short_name', 'bio'
     ]
+
+    def form_valid(self, form):
+        form.instance.creator = self.request.user
+        return super().form_valid(form)
