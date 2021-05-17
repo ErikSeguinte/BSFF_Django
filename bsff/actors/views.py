@@ -1,3 +1,5 @@
-from django.shortcuts import render
+from vanilla import CreateView, UpdateView, ListView, UpdateView
+from .models import Actor
 
-# Create your views here.
+class ActorListView(ListView):
+    model = Actor
