@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Actors: {{ actor.full_name }}{% endblock title %}
+{% block content %}
+    <h2>{{ actor.full_name }}</h2>
+    {% if actor.short_name %}
+        <p>Preferred Name: {{ actor.short_name }}</p>
+    {% endif %}
+
+    {% if actor.bio %}
+        <p>{{ actor.bio|linebreaksbr }}</p>
+    {% endif %}
+{% endblock content %}

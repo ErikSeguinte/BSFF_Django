@@ -8,5 +8,10 @@ urlpatterns = [
         route='',
         view = views.ActorListView.as_view(),
         name = 'list'
-    )
+    ),
+    path(
+        route='<slug:slug>',
+        view = views.ActorDetailView.as_view(),
+        name = 'detail'
+    ),
 ]

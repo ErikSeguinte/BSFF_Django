@@ -3,8 +3,14 @@
 {% block content %}
 <h2>Actor List</h2>
 <ul>
-{% for actor in actor_list %}
-<li><a href="#TODO">{{ actor.full_name }}</a></li>
-{% endfor %}
+    {% for actor in actor_list %}
+    <li>
+        <a href={% url 'actors:detail' actor.slug%}>{{ actor.full_name }}</a>
+    <ul>
+        <li>{{actor.bio|linebreaksbr}}</li>
+    </ul>
+    
+    </li>
+    {% endfor %}
 </ul>
 {% endblock content %}
