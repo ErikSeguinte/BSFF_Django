@@ -12,3 +12,6 @@ class Actor(TimeStampedModel):
     short_name = models.CharField("First name, short name, or use-name", max_length=255)
 
     bio = models.TextField("Bio", )
+
+    def __str__(self):
+        return self.full_name
