@@ -1,5 +1,4 @@
-from vanilla import CreateView, UpdateView, ListView, UpdateView
-from vanilla.model_views import DetailView
+from vanilla.model_views import DetailView, UpdateView, CreateView, ListView
 from .models import Actor
 from django.contrib.auth.mixins import LoginRequiredMixin
 
@@ -20,3 +19,12 @@ class ActorCreateView(LoginRequiredMixin,CreateView):
     def form_valid(self, form):
         form.instance.creator = self.request.user
         return super().form_valid(form)
+
+class ActorUpdateView(LoginRequiredMixin,UpdateView):
+    model = Actor
+    lookup_field = 'slug'
+    fields = [
+        'full_name', 'short_name', 'bio'
+    ]
+    
+    action = "update"
