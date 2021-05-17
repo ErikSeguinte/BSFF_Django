@@ -10,6 +10,12 @@
         <p>{{ actor.bio|linebreaksbr }}</p>
     {% endif %}
 
+    <ul>
+    {%for character in actor.character_set.all%}
+        <li> {{character.full_name}} </li>
+    {%endfor%}
+    </ul>
+
     <hr/>
     
     <h3>Submitted by

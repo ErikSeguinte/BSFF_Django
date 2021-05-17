@@ -5,7 +5,7 @@ from model_utils.models import TimeStampedModel
 from django.urls import reverse
 from django.conf import settings
 
-# from ..actors.models import Actor
+from ..actors.models import Actor
 
 # Create your models here.
 
@@ -17,7 +17,11 @@ class Character(TimeStampedModel):
 
     bio = models.TextField("Bio", blank=True)
 
-
+    actors = models.ForeignKey(
+        Actor,
+        on_delete=models.SET_NULL,
+        null=True
+    )
 
 
     def __str__(self):
