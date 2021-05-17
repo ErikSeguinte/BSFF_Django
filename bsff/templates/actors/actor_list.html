@@ -6,9 +6,11 @@
     {% for actor in actor_list %}
     <li>
         <a href={% url 'actors:detail' actor.slug%}>{{ actor.full_name }}</a>
-    <ul>
-        <li>{{actor.bio|linebreaksbr}}</li>
-    </ul>
+        {%if actor.bio%}
+        <ul>
+            <li>{{actor.bio|linebreaksbr}}</li>
+        </ul>
+    {%endif%}
     
     </li>
     {% endfor %}
