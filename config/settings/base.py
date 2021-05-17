@@ -76,7 +76,8 @@ THIRD_PARTY_APPS = [
 LOCAL_APPS = [
     "bsff.users.apps.UsersConfig",
     # Your stuff: custom apps go here
-    "bsff.actors.apps.ActorsConfig"
+    "bsff.actors.apps.ActorsConfig",
+    "bsff.characters.apps.CharactersConfig",
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
