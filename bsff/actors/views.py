@@ -9,3 +9,9 @@ class ActorListView(ListView):
 class ActorDetailView(DetailView):
     model = Actor
     lookup_field = 'slug'
+
+class ActorCreateView(CreateView):
+    model = Actor
+    fields = [
+        'full_name', 'short_name', 'bio'
+    ]

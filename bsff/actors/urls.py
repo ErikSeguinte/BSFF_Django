@@ -10,8 +10,14 @@ urlpatterns = [
         name = 'list'
     ),
     path(
-        route='<slug:slug>',
+        route='add/',
+        view = views.ActorCreateView.as_view(),
+        name = 'add'
+    ),
+    path(
+        route='<slug:slug>/',
         view = views.ActorDetailView.as_view(),
         name = 'detail'
     ),
+    
 ]
